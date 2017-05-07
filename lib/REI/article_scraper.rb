@@ -2,10 +2,18 @@ require 'open-uri'
 require 'pry'
 require 'nokogiri'
 
-article = []
+class Article_Scraper
 
-doc = Nokogiri::HTML(open('http://realestateinyourtwenties.com/blog/'))
-doc.css('div.hfeed h2 a').each do |title|
-  article << title.text
+  def self.scrape_titles
+    article = []
+
+    doc = Nokogiri::HTML(open('http://realestateinyourtwenties.com/blog/'))
+    doc.css('div.hfeed h2 a').each do |title|
+      article << title.text
+    end
+    article.each_with_index do |title, i|
+      puts "#{i}. #{title}"
+    end
+  end
+
 end
-article

@@ -37,6 +37,7 @@ class REI_CLI
       case input
       when "1"
         puts "Entering Real Estate In Your Twenties..".colorize(:light_blue)
+        Article_Scraper.scrape_titles
       when "2"
         puts "Entering Bigger Pockets..".colorize(:light_blue)
       when "list"
