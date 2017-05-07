@@ -1,0 +1,4 @@
+#!/usr/bin/env ruby
+require './lib/REI/cli'
+
+REI_CLI.new.call
